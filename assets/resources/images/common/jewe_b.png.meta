@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "17343513-fc9c-4ee1-96fa-56b52188b2dc",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "jewe_b": {
+      "ver": "1.0.3",
+      "uuid": "3ebba366-3cf9-4301-8bb7-a49020ce4559",
+      "rawTextureUuid": "17343513-fc9c-4ee1-96fa-56b52188b2dc",
+      "trimType": "custom",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 102,
+      "height": 102,
+      "rawWidth": 102,
+      "rawHeight": 102,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
