@@ -1,10 +1,8 @@
+import { BaseDlg } from "./BaseDlg";
+
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
-    onLoad () {}
-
-    onCloseDlg() {
-        this.node.removeFromParent();
-    }
+export default class NewClass extends BaseDlg {
+    
 }
