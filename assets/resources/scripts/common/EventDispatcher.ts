@@ -1,4 +1,4 @@
-
+//只能注册一个对象的函数，不能注册闭包和箭头函数，因为这样没法移除
 export default class EventDispatcher {
     private name2handlers: { [key: number]: any } = {};
     private static instance: EventDispatcher = null;
@@ -12,7 +12,7 @@ export default class EventDispatcher {
         return EventDispatcher.instance;
     }
 
-    public on(name:number, func: any, obj: any = null): void {
+    public on(name:number, func: any, obj: any): void {
         let handler = { func: func, obj: obj };
         let handlers = this.name2handlers[name];
         if (handlers == undefined) {
@@ -44,12 +44,7 @@ export default class EventDispatcher {
                 let handler = handlers[idx];
                 let func = handler["func"];
                 let obj = handler["obj"];
-                if (obj != null) {
-                    cc.log(func + " " + obj);
-                    func.call(obj, data);
-                } else {
-                    func(data);
-                }
+                func.call(obj, data);
             }
         }
     }

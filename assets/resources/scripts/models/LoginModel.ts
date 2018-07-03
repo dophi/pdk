@@ -1,5 +1,5 @@
 import EventDispatcher from "../common/EventDispatcher";
-import {Events} from "../events/Events";
+import {Events} from "../globals/Events";
 import IModel from "./IModel";
 
 export default class LoginModel implements IModel {

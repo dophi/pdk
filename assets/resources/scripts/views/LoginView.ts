@@ -1,6 +1,6 @@
 import LoginModel from "../models/LoginModel";
 import EventDispatcher from "../common/EventDispatcher";
-import {Events} from "../events/Events";
+import {Events} from "../globals/Events";
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -25,6 +25,7 @@ export default class LoginView extends cc.Component {
 
     onLoginSuccess() {
         this.loginStateLabel.string = "登陆成功";
+        cc.director.loadScene("scenes/hall");
     }
 
     onLoginFailed() {

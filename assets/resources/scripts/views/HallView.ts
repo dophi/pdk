@@ -1,12 +1,12 @@
 
 import Common from "../common/Common"
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class HallView extends cc.Component {
-    onLoad () {
-        
+    onLoad() {
+
     }
 
     onDestroy() {
@@ -31,15 +31,18 @@ export default class HallView extends cc.Component {
     }
 
     onAddCoinButtonClick() {
-       Common.addPrefabToScene("prefabs/shopDlg")
+        Common.addPrefabToScene("prefabs/shopDlg");
     }
 
     onAddDiamondButtonClick() {
-       Common.addPrefabToScene("prefabs/shopDlg")
+        Common.addPrefabToScene("prefabs/shopDlg");
     }
 
     onShopButtonClick() {
-       Common.addPrefabToScene("prefabs/shopDlg")
+        Common.addPrefabToScene("prefabs/shopDlg");
+    }
+
+    onEnterButtonClick_Test() {
+        cc.director.loadScene("scenes/game");
     }
 }
- 
