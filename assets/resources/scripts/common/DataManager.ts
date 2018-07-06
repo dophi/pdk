@@ -1,5 +1,5 @@
 import { ItemType, CardType } from "../globals/Types";
-
+import Common from "../common/Common";
 /*
     所有数据都放这个类管理
  */
@@ -12,6 +12,13 @@ export class EmailData {
 }
 
 export class ShopItemData {
+    public constructor(type, count, priceType, price) {
+        this.type = type;
+        this.count = count;
+        this.priceType = priceType;
+        this.price = price;
+    }
+
     public type: ItemType;
     public count: number;
     public price: number;
@@ -34,9 +41,10 @@ export class CardData {
 export class DataManager {
     private static instance: DataManager = null;
     private constructor() { };
-    public Instance() {
+    public static Instance() {
         if (DataManager.instance == null) {
             DataManager.instance = new DataManager;
+            DataManager.instance._initTestData();  //todo: 测试数据，要删掉
         }
         return DataManager.instance;
     }
@@ -50,6 +58,18 @@ export class DataManager {
 
     private emails: EmailData[] = [];
     private shopItems: ShopItemData[] = [];
+
+    ////// 提供假数据
+    private _initTestData() {
+        for(let idx=0;idx<20;idx++) {
+            let buyItemType = Common.randomInt(1, ItemType.None - 1);
+            let count = Common.randomInt(0,10);
+            let priceType = Common.randomInt(1,2);
+            let price = Common.randomInt(1,2);
+            let newItem = new ShopItemData(buyItemType,count*100,priceType, price);
+            this.shopItems.push(newItem);
+        }
+    }
 
     getCoinCount(): number {
         return this.coinCount;
@@ -83,6 +103,9 @@ export class DataManager {
         this.enableMusic = isEnable;
     }
 
+    getShopItemArray():ShopItemData[] {
+        return this.shopItems;
+    }
     //网络数据处理
 
 }

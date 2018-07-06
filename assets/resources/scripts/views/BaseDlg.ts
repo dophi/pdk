@@ -19,8 +19,8 @@ export class BaseDlg extends cc.Component {
 
     //设置对话框弹出的效果细节
     protected init(scalePercent, time) {
-       this.scalePercent = scalePercent;
-       this.actionTime = time; 
+        this.scalePercent = scalePercent;
+        this.actionTime = time;
     }
 
     private closeActionFinished() {

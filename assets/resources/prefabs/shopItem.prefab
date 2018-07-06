@@ -57,8 +57,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 0,
-      "height": 0
+      "width": 202,
+      "height": 267
     },
     "_rotationX": 0,
     "_rotationY": 0,
@@ -531,11 +531,18 @@
       "__id__": 1
     },
     "_enabled": true,
-    "smallLabel": null,
-    "bigIcon": null,
-    "smallIcon": null,
-    "bigLabel": null,
-    "sid": 0
+    "countLabel": {
+      "__id__": 15
+    },
+    "itemTypeIcon": {
+      "__id__": 9
+    },
+    "priceLabel": {
+      "__id__": 12
+    },
+    "priceTypeIcon": {
+      "__id__": 6
+    }
   },
   {
     "__type__": "cc.PrefabInfo",

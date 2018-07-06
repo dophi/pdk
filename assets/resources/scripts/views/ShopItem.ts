@@ -1,29 +1,32 @@
-const {ccclass, property} = cc._decorator;
+import { getItemTypeName, ItemType, ShopItemType } from "../globals/Types";
+
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class ShopItem extends cc.Component {
 
     @property(cc.Label)
-    smallLabel: cc.Label = null;
+    countLabel: cc.Label = null;
 
     @property(cc.Sprite)
-    bigIcon: cc.Sprite = null;
-
-    @property(cc.Sprite)
-    smallIcon: cc.Sprite = null;
+    itemTypeIcon: cc.Sprite = null;
 
     @property(cc.Label)
-    bigLabel: cc.Label = null;    
+    priceLabel: cc.Label = null;
+
+    @property(cc.Sprite)
+    priceTypeIcon: cc.Sprite = null;
 
     //唯一id,数据层物品的id
-    @property
     sid: number = 0;
 
-    initData(smallNumber, bigNumber, smallSprite, bigSprite) {
-        this.smallLabel.string = ""+smallNumber;
-        this.bigLabel.string = ""+bigNumber;
-        this.smallIcon = smallSprite;
-        this.bigIcon = bigSprite;
+    initData(itemType, count, priceType, price) {
+        let itemName = getItemTypeName(itemType, ShopItemType.Item);
+        this.itemTypeIcon.spriteFrame.setTexture(cc.url.raw("/images/common/"+itemName+".png"));
+        this.countLabel.string = "" + count;
+        let itemPriceName = getItemTypeName(itemType, ShopItemType.Price);
+        this.priceTypeIcon.spriteFrame.setTexture(cc.url.raw("/images/common/"+itemName+".png"));
+        this.priceLabel.string = "" + price;
     }
 
     // onLoad () {}
