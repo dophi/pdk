@@ -26,7 +26,7 @@ export class ShopItemData {
 }
 
 export class ItemData {
-    public sid: number
+    public sid: number;
     public type: ItemType;
     public count: number;
 }

@@ -14,21 +14,21 @@ export enum ShopItemType {
     Price
 }
 
-export function getItemTypeName(type:ItemType, shopItemType:ShopItemType) {
+export function getItemTypeImageName(type: ItemType, shopItemType: ShopItemType) {
     let type2prefix = {};
     type2prefix[ItemType.Money] = "cash";
     type2prefix[ItemType.Coin] = "coin_";
     type2prefix[ItemType.Diamond] = "jewe_";
     type2prefix[ItemType.CardRecord] = "record_";
     type2prefix[ItemType.Speaker] = "amplifier";
-    
+
     let itemName = "record_";
-    if(shopItemType == ShopItemType.Item) {
+    if (shopItemType == ShopItemType.Item) {
         itemName += "b";
-    }else if(shopItemType == ShopItemType.Price) {
+    } else if (shopItemType == ShopItemType.Price) {
         itemName += "s";
     }
-    return itemName; 
+    return itemName;
 }
 
 export enum CardType {
@@ -40,3 +40,7 @@ export enum CardType {
     None
 }
 
+export function getCardTypeSmallImageName(type: CardType): string {
+    
+    return "";
+}

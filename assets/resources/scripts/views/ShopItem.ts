@@ -1,4 +1,4 @@
-import { getItemTypeName, ItemType, ShopItemType } from "../globals/Types";
+import { getItemTypeImageName, ItemType, ShopItemType } from "../globals/Types";
 
 const { ccclass, property } = cc._decorator;
 
@@ -21,10 +21,10 @@ export default class ShopItem extends cc.Component {
     sid: number = 0;
 
     initData(itemType, count, priceType, price) {
-        let itemName = getItemTypeName(itemType, ShopItemType.Item);
+        let itemName = getItemTypeImageName(itemType, ShopItemType.Item);
         this.itemTypeIcon.spriteFrame.setTexture(cc.url.raw("/images/common/"+itemName+".png"));
         this.countLabel.string = "" + count;
-        let itemPriceName = getItemTypeName(itemType, ShopItemType.Price);
+        let itemPriceName = getItemTypeImageName(itemType, ShopItemType.Price);
         this.priceTypeIcon.spriteFrame.setTexture(cc.url.raw("/images/common/"+itemName+".png"));
         this.priceLabel.string = "" + price;
     }

@@ -20,7 +20,7 @@ export default class GameView extends cc.Component {
         return card;
     }
     private async loadCards() {
-        for (let idx = 0; idx < 10; idx++) {
+        for (let idx = 0; idx < 15; idx++) {
             let card = await this.loadOneCard();
             this.controllerScript.addCard(card);
             cc.log("load"+idx);

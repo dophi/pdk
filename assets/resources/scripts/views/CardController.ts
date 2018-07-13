@@ -101,11 +101,10 @@ export class CardController extends cc.Component {
         card.parent = this.node;
         let cards: cc.Node[] = this.node.children;
         let cardCount: number = this.node.childrenCount;
-        let left = this.space * cardCount * 0.5;
+        let left = -this.space * cardCount * 0.5;
         for (var idx = 0; idx < cardCount; idx++) {
             let card: cc.Node = cards[idx];
             card.x = left + idx * this.space;
         }
     }
-
 }
